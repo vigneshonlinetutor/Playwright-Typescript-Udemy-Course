@@ -5,7 +5,7 @@ test('Simple Alert Handling', async ({ page }) => {
 
     page.on("dialog",async(alert)=>{
         const alertMessage = alert.message();
-        expect(alertMessage).toEqual('I am a JS Alert Vignesh');
+        expect(alertMessage).toEqual('I am a JS Alert');
         await alert.accept();
         await expect(page.locator('#result')).toHaveText('You successfully clicked an alert');
     })

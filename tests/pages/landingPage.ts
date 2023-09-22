@@ -1,8 +1,8 @@
 import { Locator, Page } from "@playwright/test";
 
 export class LandingPage{
-    readonly page:Page;
-    readonly signInButton:Locator;
+    private readonly page:Page;
+    private readonly signInButton:Locator;
 
     constructor(page:Page){
         this.signInButton = page.locator('//a[normalize-space()="Sign in"]');

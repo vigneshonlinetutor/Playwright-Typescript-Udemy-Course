@@ -10,14 +10,3 @@ test('Login Conduit test using POM', async ({ page, landingPage, homePage, signi
   await settingsPage.clickLogoutButton();
   await page.close();
 });
-
-test('Login Conduit test using POM 2', async ({ page, homePage, signinPage}) => {
-  await page.goto('https://react-redux.realworld.io/');
-  await landingPage.clickSignInButton();
-  await signinPage.enterEmailId("playwrightdemo@gmail.com");
-  await signinPage.enterPassword("playwrightdemo");
-  await signinPage.clickSignInButton();
-  await homePage.clickSettingsButton();
-  await settingsPage.clickLogoutButton();
-  await page.close();
-});

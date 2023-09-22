@@ -3,14 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "clean:reports": "rimraf allure-report allure-results && mkdirp allure-report allure-results",
+    "generate:reports": "npx allure generate ./allure-results --clean",
+    "open:reports": "npx allure open ./allure-report",
+    "pretest": "npm run clean:reports",
+    "posttest": "npm run generate:reports && npm run open:reports",
+    "execute:script": "npx playwright test --project=chromium",
+    "test": "npm run execute:script || npm run posttest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.0",
     "@types/node": "^20.6.3",
+    "allure-commandline": "^2.24.0",
+    "allure-playwright": "^2.8.1",
     "csv-parse": "^5.5.0",
-    "luxon": "^3.4.3"
+    "luxon": "^3.4.3",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.1"
   }
 }

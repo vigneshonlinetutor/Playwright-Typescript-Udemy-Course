@@ -2,7 +2,6 @@ import { Page, Locator } from "@playwright/test";
 import BasePage from "./basePage";
 
 export class SettingsPage extends BasePage{
-    readonly page: Page;
     private readonly logoutButton: Locator;
 
     constructor(page:Page){

@@ -28,13 +28,21 @@ export default class BasePage{
     }
 
     // Common method to wait for an element to be visible
-    async waitForElementVisible(selector: string) {
-        await this.page.waitForSelector(selector, { state: 'visible' });
+    async waitForElementVisible(element: Locator | string) {
+        if (typeof element === 'string') {
+            await this.page.waitForSelector(element, { state: 'visible' });
+        } else {
+            await element.waitFor({ state: 'visible' });
+        }
     }
 
     // Common method to wait for an element to be hidden
-    async waitForElementHidden(selector: string) {
-        await this.page.waitForSelector(selector, { state: 'hidden' });
+    async waitForElementHidden(element: Locator) {
+        if (typeof element === 'string') {
+            await this.page.waitForSelector(element, { state: 'hidden' });
+        } else {
+            await element.waitFor({ state: 'hidden' });
+        }
     }
 
     // Common method to take a screenshot

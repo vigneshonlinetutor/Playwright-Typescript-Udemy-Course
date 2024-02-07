@@ -2,7 +2,6 @@ import { Locator, Page } from "@playwright/test";
 import BasePage from "./basePage";
 
 export class SignInPage extends BasePage{
-    readonly page:Page;
     private readonly emailIdTextBox:Locator;
     private readonly passwordTextBox:Locator;
     private readonly signInButton:Locator;

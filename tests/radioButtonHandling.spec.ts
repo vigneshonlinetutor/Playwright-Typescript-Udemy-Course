@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('Radio button Handling', async ({ page }) => {
     await page.goto('https://demo.automationtesting.in/Register.html');
+    await page.locator('//button[contains(@class,"fc-cta-consent")]//p').click();
     const maleRadioButton = page.locator('input[value="Male"]');
     const femaleRadioButton = page.locator('input[value="FeMale"]');
 

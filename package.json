@@ -9,14 +9,14 @@
     "open:reports": "npx allure open ./allure-report",
     "pretest": "npm run clean:reports",
     "posttest": "npm run generate:reports && npm run open:reports",
-    "execute:script": "npx playwright test --project=chromium",
+    "execute:script": "npx playwright test alertHandling.spec.ts --project=chromium",
     "test": "npm run execute:script || npm run posttest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.41.0",
+    "@playwright/test": "^1.42.0",
     "@types/node": "^20.6.3",
     "allure-commandline": "^2.24.0",
     "allure-playwright": "^2.8.1",

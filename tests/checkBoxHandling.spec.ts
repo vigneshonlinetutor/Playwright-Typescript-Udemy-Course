@@ -2,10 +2,6 @@ import { test, expect } from '@playwright/test'
 
 test('Checkbox button Handling', async ({ page }) => {
     await page.goto('https://demo.automationtesting.in/Register.html');
-
-    //  TO CLOSE THE CONSENT POPUP
-    await page.locator('//button[contains(@class,"fc-cta-consent")]//p').click();
-
     const cricketCheckbox = page.locator('#checkbox1');
     const moviesCheckbox = page.locator('#checkbox2');
     const hockeyCheckbox = page.locator('#checkbox3');
